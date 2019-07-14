@@ -10,3 +10,8 @@ import boto3
 ec2 = boto3.resource('ec2')
 for instance in ec2.instances.all():
     print instance.id, instance.state
+    
+# Save the lines above into a file named list_instances.py and change the mode to executable. 
+# That will allow you to run the script directly from the command line. 
+# Also note that you’ll need to edit and chmod +x the remaining scripts to get them running as well. 
+# In this case, the procedure looks like this:
