@@ -1,0 +1,24 @@
+## SCRIPTING S3
+
+# The AWS Simple Storage Service (S3) provides object storage similar to a file system. 
+# Folders are represented as buckets and the contents of the buckets are known as keys. 
+# Of course, all of these objects can be managed with Python and the boto3 library.
+
+## LIST BUCKETS AND THEIR CONTENTS
+
+# Our first S3 script will let us see what buckets currently exist in our account and any keys inside those buckets.
+# Of course, we’ll import the boto3 library. Then we can create an S3 resource. 
+# Remember, this gives us a handle to all of the functions provided by the S3 console. 
+# We can then use the resource to iterate over all buckets. 
+# For each bucket, we print the name of the bucket and then iterate over all the objects inside that bucket. 
+# For each object, we print the object’s key or essentially the object’s name. The code looks like this:
+
+#!/usr/bin/env python
+import boto3
+s3 = boto3.resource('s3')
+for bucket in s3.buckets.all():
+    print bucket.name
+    print "---"
+    for item in bucket.objects.all():
+        print "\t%s" % item.key
+
