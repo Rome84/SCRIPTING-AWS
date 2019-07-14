@@ -15,3 +15,6 @@ for instance in ec2.instances.all():
 # That will allow you to run the script directly from the command line. 
 # Also note that you’ll need to edit and chmod +x the remaining scripts to get them running as well. 
 # In this case, the procedure looks like this:
+$ vi list_instances.py
+$ chmod +x list_instances.py
+$ ./list_instances.py
